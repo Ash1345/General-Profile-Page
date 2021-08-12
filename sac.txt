@@ -1,0 +1,10 @@
+ <div class="image">
+        <img src="https://www.google.com/url?sa=i&url=https%3A%2F%2Fpixabay.com%2Fvectors%2Fuser-ludek-man-icon-social-media-3331257%2F&psig=AOvVaw0LbbK5-Xck3ed15E3MenEF&ust=1626025178844000&source=images&cd=vfe&ved=0CAoQjRxqFwoTCKCj74CG2fECFQAAAAAdAAAAABAD" alt="User">
+      </div>
+overflow: scroll;
+   overflow-x: hidden;
+
+
+ top:600px;
+  width:700px;
+  height:550px;
