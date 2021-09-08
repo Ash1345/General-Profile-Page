@@ -1,30 +1,37 @@
 $(document).ready(function () {
    console.log("ready");
      $('.action2').click(function(){
-       $(".profile").after(
+       $(".container").after(
           `<div class="innerDetails">
-                      <div  class="collapse1">
-             <h1>Education</h1> 
-             <button class="sub2"><i class="fas fa-minus"></i></button>
+          <div class="collapse1">
+              <h1>Education</h1>
+              <button class="sub2"><i class="fas fa-minus"></i></button>
+          </div>
+          <h2>Fill Your Details: </h2>
+          <p class="note">Note: Click on the the field of education and fill the mandatory requirements</p>
+          <div class="tenth">
+            <div class="innerflex">  
+              <button class="innerarrow"><i class="fas fa-chevron-right"></i></button>
+              <h3 class="t10">10TH</h3>
+            </div>    
+              <button class="innerb1"><i class="fas fa-plus"></i></button>
+          </div>
+          <div class="twelfth">
+            <div class="innerflex">  
+              <button class="innerarrow"><i class="fas fa-chevron-right"></i></button>
+              <h3 class="t12">12TH</h3>
+            </div>  
+              <button class="innerb2"><i class="fas fa-plus"></i></button>
+          </div>
+          <div class="Graduation">
+            <div class="innerflex">  
+              <button class="innerarrow"><i class="fas fa-chevron-right"></i></button>
+              <h3 class="t13">Graduation</h3>
+          
              </div>
-             <h2>Fill Your Details: </h2>
-            <p class="note">Note: Click on the the field of education and fill the mandatory requirements</p>
-            <div class="tenth">
-               <button class="innerarrow"><i class="fas fa-chevron-right"></i></button>
-               <h3 class="t10">10TH</h3>
-               <button class="innerb1"><i class="fas fa-plus"></i></button>
-            </div>
-            <div class="twelfth">
-               <button class="innerarrow"><i class="fas fa-chevron-right"></i></button>
-               <h3 class="t12">12TH</h3>
-               <button class="innerb2"><i class="fas fa-plus"></i></button>
-            </div>
-            <div class="Graduation">
-               <button class="innerarrow"><i class="fas fa-chevron-right"></i></button>
-               <h3 class="t13">Graduation</h3>
-               <button class="innerb3"><i class="fas fa-plus"></i></button>
-            </div>
-          </div>`
+              <button class="innerb3"><i class="fas fa-plus"></i></button>
+          </div>
+      </div>`
        );
        //collapse button
        $(".sub2").click(function(){
@@ -33,10 +40,11 @@ $(document).ready(function () {
              //$(".profile").css({"opacity":"100%"}); 
              $(".innerb1").css({"opacity":"100%"});
              $("body").css({"overflow-y":"scroll"});
-             $(".container").css({"overflow-y":"scroll"});
+            //  $(".container").css({"overflow-y":"scroll"});
              $('button').attr('disabled', false);
              $('.value3').unbind('click', false);
-             $(".profile").css({"opacity":"100%"});
+             $(".container").css({"opacity":"100%"});
+             $(".picture").css({"opacity":"100%"});
           });
        
        
@@ -50,7 +58,8 @@ $(document).ready(function () {
        $('.innerarrow').attr('disabled',false);
        
        //modified css under innerDetails 
-       $(".profile").css({"opacity":"0.2"});
+       $(".container").css({"opacity":"0.2"});
+       $(".picture").css({"opacity":"0.2"});
        $(".innerDetails").css({"position":"absolute"});
        
     
@@ -62,17 +71,23 @@ $(document).ready(function () {
      
        // Inner Button 1 function
       $('.innerb1').click(function(){
-        $('.profile').after(`<div class="color1 cont1">
+        $('.container').after(`<div class="color1 cont1">
         <div class="el1">
         <div class="collapse2">
         <h1>10th</h1>
         <button class="sub1"><i class="fas fa-minus"></i></button>
         </div>
-        <h2 class="innerp1">Enter Your Details:</h2>
+        <h1 class="innerp1">Enter Your Details:</h1>
+
+        <form action="" class="form1">
         <input type='text' class="i1" placeholder='Enter your School Name'/>
         <input type='text' class="i2" placeholder='Enter Your Total Percentage'/>
-       </div>
+        <div>
         <button type='submit' class="submit1">Submit!</button>
+        </div>
+        </form>
+
+        </div>
         </div>
         `);
         $(".picture").css({"justify-content":"center","align-items":"center"});
@@ -82,12 +97,13 @@ $(document).ready(function () {
         $(".innerDetails").hide();
       //$(".color1 *").prop('enabled', true);
        $("input").addClass("main2");
-       $(".profile").css({"opacity":"0.2"});
+       $(".container").css({"opacity":"0.2"});
+       $(".picture").css({"opacity":"0.2"});
         //$(".sub1").css({"position":"relative","left":"35px","bottom":"10px"});
        $(".color1").css({"position":"absolute","background-color":"white","border-radius":"2%","align-items":"center","top":"600px","z-index":"9","padding":"20px 20px 20px 20px"});
       $(".submit1").css({"position":"relative","top":"25px"});
        //$(".el1").css({"position":"relative","left":"25px","padding-top":"0.05px","padding-bottom":"15px"});
- $(".main2").css({"position":"relative","width":"450px"});
+ $(".main2").css({"position":"relative","max-width":"450px","width":"73%"});
        
        //$("body").css({"overflow":"hidden"});
        //$(".container").css({"overflow":"hidden"});
@@ -97,8 +113,17 @@ $(document).ready(function () {
       $(".submit1").attr('disabled',false);
         $(".sub1").attr('disabled',false);
        $('.value3').bind('click', false);
-       $(".cont1").css({"width":"700px","height":"550px"});
-       $(".innerp1").css({"font-size":"30px", "font-family": "Poppins , sans-serif"});
+       $(".cont1").css({"max-width":"700px","width":"73%","max-height":"550px","height":"78%"});
+       $(".innerp1").css({"font-family": "Poppins , sans-serif"});
+
+        //submit button
+        $(".form1").submit(function(){
+          alert("Submitted");
+        });
+
+
+
+
       
        //collapse button
        $(".sub1").click(function(){
@@ -108,7 +133,7 @@ $(document).ready(function () {
              $(".innerDetails").show();
              $(".innerb1").css({"opacity":"100%"});
              $("body").css({"overflow-y":"scroll"});
-             $(".container").css({"overflow-y":"scroll"});
+            //  $(".container").css({"overflow-y":"scroll"});
              $('button').attr('disabled', false);
              $('.value3').unbind('click', false);
           $(".innerDetails").css({"opacity":"100%"});
@@ -117,17 +142,21 @@ $(document).ready(function () {
        
         // Inner Button 2 function
      $('.innerb2').click(function(){
-        $('.profile').after(`<div class="color1 cont1">
+        $('.container').after(`<div class="color1 cont1">
         <div class="el1">
         <div  class="collapse2">
              <h1>12th</h1> 
              <button class="sub1"><i class="fas fa-minus"></i></button>
              </div>
-        <h2 class="innerp1">Enter Your Details:</h2>
+        <h1 class="innerp2">Enter Your Details:</h1>
+        <form action="" class="form2">
         <input type='text' class="i1" placeholder='Enter your College Name'/>
         <input type='text' class="i2" placeholder='Enter Your Total Percentage'/>
-       </div>
+        <div>
         <button type='submit' class="submit1">Submit!</button>
+        </div>
+        </form>
+        </div>
         </div>
         `);
       
@@ -137,12 +166,13 @@ $(document).ready(function () {
         //$(".innerDetails").css({"opacity":"0.4"});
       //$(".color1 *").prop('enabled', true);
        $("input").addClass("main2");
-       $(".profile").css({"opacity":"0.2"});
+       $(".container").css({"opacity":"0.2"});
+       $(".picture").css({"opacity":"0.2"});
         //$(".sub1").css({"position":"relative","left":"35px","bottom":"10px"});
        $(".color1").css({"position":"absolute","background-color":"white","border-radius":"2%","align-items":"center","top":"600px","z-index":"9","padding":"20px 20px 20px 20px"});
       $(".submit1").css({"position":"relative","top":"25px"});
        //$(".el1").css({"position":"relative","left":"25px","padding-top":"0.05px","padding-bottom":"15px"});
- $(".main2").css({"position":"relative","width":"450px"});
+     $(".main2").css({"position":"relative","max-width":"450px","width":"73%"});
        
        //$("body").css({"overflow":"hidden"});
        //$(".container").css({"overflow":"hidden"});
@@ -154,9 +184,17 @@ $(document).ready(function () {
         $(".sub1").attr('disabled',false);
        $('.value3').bind('click', false);
        //$(".cont1").css({"width":"540px","height":"500px"});
-       $(".cont1").css({"width":"700px","height":"550px"});
-       $(".innerp1").css({"font-size":"30px", "font-family": "Poppins , sans-serif"});
+       $(".cont1").css({"max-width":"700px","width":"73%","max-height":"550px","height":"78%"});
+       $(".innerp2").css({"font-family": "Poppins , sans-serif"});
       
+       //submit
+       $(".form2").submit(function(){
+        alert("Submitted");
+      });
+
+      
+
+
        //collapse button
        $(".sub1").click(function(){
              $(".color1").hide();
@@ -175,17 +213,21 @@ $(document).ready(function () {
        
         // Inner Button 3 function
      $('.innerb3').click(function(){
-        $('.profile').after(`<div class="color1 cont1">
+        $('.container').after(`<div class="color1 cont1">
         <div class="el1">
         <div class="collapse2">
         <h1>Graduation</h1>
         <button class="sub1"><i class="fas fa-minus"></i></button>
         </div>
-        <h2 class="innerp1">Enter Your Details:</h2>
+        <h1 class="innerp1">Enter Your Details:</h1>
+        <form action="" class="form3">
         <input type='text' class="i1" placeholder='Enter Education Category'/>
         <input type='text' class="i2" placeholder='Enter Your Score'/>
-       </div>
+        <div>
         <button type='submit' class="submit1">Submit!</button>
+        </div>
+        </form>
+        </div>
         </div>
         `);
       
@@ -195,12 +237,13 @@ $(document).ready(function () {
         $(".innerDetails").hide();
       //$(".color1 *").prop('enabled', true);
        $("input").addClass("main2");
-       $(".profile").css({"opacity":"0.2"});
+       $(".container").css({"opacity":"0.2"});
+       $(".picture").css({"opacity":"0.2"});
         //$(".sub1").css({"position":"relative","left":"35px","bottom":"10px"});
        $(".color1").css({"position":"absolute","background-color":"white","border-radius":"2%","align-items":"center","top":"600px","z-index":"9","padding":"20px 20px 20px 20px"});
       $(".submit1").css({"position":"relative","top":"25px"});
        //$(".el1").css({"position":"relative","left":"25px","padding-top":"0.05px","padding-bottom":"15px"});
- $(".main2").css({"position":"relative","width":"450px"});
+   $(".main2").css({"position":"relative","max-width":"450px","width":"73%"});
        
        //$("body").css({"overflow":"hidden"});
        //$(".container").css({"overflow":"hidden"});
@@ -210,9 +253,16 @@ $(document).ready(function () {
       $(".submit1").attr('disabled',false);
         $(".sub1").attr('disabled',false);
        $('.value3').bind('click', false);
-       $(".cont1").css({"width":"700px","height":"550px"});
-       $(".innerp1").css({"font-size":"30px", "font-family": "Poppins , sans-serif"});
+       $(".cont1").css({"max-width":"700px","width":"73%","max-height":"550px","height":"78%"});
+       $(".innerp1").css({"font-family": "Poppins , sans-serif"});
       
+       //submit
+       $(".form3").submit(function(){
+        alert("Submitted");
+      });
+
+
+
        //collapse button
        $(".sub1").click(function(){
              $(".color1").hide();
@@ -222,7 +272,7 @@ $(document).ready(function () {
         $('.action3').attr('disabled', false);
              $(".innerb3").css({"opacity":"100%"});
              $("body").css({"overflow-y":"scroll"});
-             $(".container").css({"overflow-y":"scroll"});
+            //  $(".container").css({"overflow-y":"scroll"});
              $('button').attr('disabled', false);
              $('.value3').unbind('click', false);
           $(".innerDetails").css({"opacity":"100%"});
@@ -232,17 +282,21 @@ $(document).ready(function () {
       
    
     $('.action3').click(function(){
-        $('.profile').after(`<div class="color2 cont2">
+        $('.container').after(`<div class="color2 cont2">
         <div class="el1">
          <div class="collapse2">
         <h1>Skills</h1>
         <button class="sub3"><i class="fas fa-minus"></i></button>
         </div>
-        <h2 class="innerp1">Enter Your Details:</h2>
+        <h1 class="innerp1">Enter Your Details:</h1>
+         <form action="" class="form4">
         <input type='text' class="i1" placeholder='Enter your Course Name'/>
         <input type='text' class="i2" placeholder='Enter Your Certificate Credentials'/>
-       </div>
+        <div>
         <button type='submit' class="submit1">Submit!</button>
+        </div>
+        </form>
+        </div>
         </div>
         `);
       
@@ -253,12 +307,13 @@ $(document).ready(function () {
         //$(".innerDetails").css({"opacity":"0.4"});
       //$(".color1 *").prop('enabled', true);
        $("input").addClass("main2");
-       $(".profile").css({"opacity":"0.2"});
+       $(".container").css({"opacity":"0.2"});
+       $(".picture").css({"opacity":"0.2"});
         //$(".sub1").css({"position":"relative","left":"35px","bottom":"10px"});
        $(".color2").css({"position":"absolute","background-color":"white","border-radius":"2%","align-items":"center","top":"600px","z-index":"9","padding":"20px 20px 20px 20px"});
       $(".submit1").css({"position":"relative","top":"25px"});
        //$(".el1").css({"position":"relative","left":"25px","padding-top":"0.05px","padding-bottom":"15px"});
- $(".main2").css({"position":"relative","width":"450px"});
+   $(".main2").css({"position":"relative","max-width":"450px","width":"73%"});
        
        //$("body").css({"overflow":"hidden"});
        //$(".container").css({"overflow":"hidden"});
@@ -269,18 +324,26 @@ $(document).ready(function () {
       $(".submit1").attr('disabled',false);
         $(".sub3").attr('disabled',false);
        $('.value3').bind('click', false);
-       $(".cont2").css({"width":"540px","height":"500px"});
-       $(".innerp1").css({"font-size":"30px", "font-family": "Poppins , sans-serif"});
+       $(".cont2").css({"max-width":"540px","width":"73%","max-height":"500px", "height":"78%"});
+       $(".innerp1").css({"font-family": "Poppins , sans-serif"});
       
+        //submit
+        $(".form4").submit(function(){
+          alert("Submitted");
+        });
+
+
+
        //collapse button
        $(".sub3").click(function(){
              $(".color2").hide();
              //$(".profile").show();
-             $(".profile").css({"opacity":"100%"});
+             $(".container").css({"opacity":"100%"});
+             $(".picture").css({"opacity":"100%"});
         $('.action2').attr('diabled',false);
              $(".innerb2").css({"opacity":"100%"});
              $("body").css({"overflow-y":"scroll"});
-             $(".container").css({"overflow-y":"scroll"});
+            //  $(".container").css({"overflow-y":"scroll"});
              $('button').attr('disabled', false);
              $('.value3').unbind('click', false);
           $(".innerDetails").css({"opacity":"100%"});
@@ -289,17 +352,21 @@ $(document).ready(function () {
      }); 
    
    $('.action4').click(function(){
-        $('.profile').after(`<div class="color3 cont3">
+        $('.container').after(`<div class="color3 cont3">
         <div class="el1">
          <div class="collapse2">
         <h1>Achievements and Responsibilities</h1>
         <button class="sub4"><i class="fas fa-minus"></i></button>
         </div>
-        <h2 class="innerp1">Enter Your Details:</h2>
+        <h1 class="innerp1">Enter Your Details:</h1>
+        <form action="" class="form5">
         <input type='text' class="i1" placeholder='Enter your Course Name'/>
         <input type='text' class="i2" placeholder='Enter Your Certificate Credentials'/>
-       </div>
+        <div>
         <button type='submit' class="submit1">Submit!</button>
+        </div>
+        </form>
+        </div>
         </div>
         `);
       
@@ -310,12 +377,13 @@ $(document).ready(function () {
         //$(".innerDetails").css({"opacity":"0.4"});
       //$(".color1 *").prop('enabled', true);
        $("input").addClass("main2");
-       $(".profile").css({"opacity":"0.2"});
+       $(".container").css({"opacity":"0.2"});
+       $(".picture").css({"opacity":"0.2"});
         //$(".sub1").css({"position":"relative","left":"35px","bottom":"10px"});
        $(".color3").css({"position":"absolute","background-color":"white","border-radius":"2%","align-items":"center","top":"600px","z-index":"9","padding":"20px 20px 20px 20px"});
       $(".submit1").css({"position":"relative","top":"25px"});
        //$(".el1").css({"position":"relative","left":"25px","padding-top":"0.05px","padding-bottom":"15px"});
- $(".main2").css({"position":"relative","width":"450px"});
+ $(".main2").css({"position":"relative","max-width":"450px","width":"73%"});
        
        //$("body").css({"overflow":"hidden"});
        //$(".container").css({"overflow":"hidden"});
@@ -326,24 +394,35 @@ $(document).ready(function () {
       $(".submit1").attr('disabled',false);
         $(".sub4").attr('disabled',false);
        $('.value3').bind('click', false);
-       $(".cont3").css({"width":"540px","height":"500px"});
-       $(".innerp1").css({"font-size":"30px", "font-family": "Poppins , sans-serif"});
-      
+       $(".cont3").css({"max-width":"540px","width":"73%","max-height":"500px", "height":"78%"});
+       $(".innerp1").css({"font-family": "Poppins , sans-serif"});
+       
+       //submit
+       $(".form5").submit(function(){
+        alert("Submitted");
+      });
+
+
        //collapse button
        $(".sub4").click(function(){
              $(".color3").hide();
              //$(".profile").show();
-             $(".profile").css({"opacity":"100%"});
+             $(".container").css({"opacity":"100%"});
+             $(".picture").css({"opacity":"100%"});
         $('.action2').attr('diabled',false);
              $(".innerb2").css({"opacity":"100%"});
              $("body").css({"overflow-y":"scroll"});
-             $(".container").css({"overflow-y":"scroll"});
+            //  $(".container").css({"overflow-y":"scroll"});
              $('button').attr('disabled', false);
              $('.value3').unbind('click', false);
           $(".innerDetails").css({"opacity":"100%"});
           });
       
      }); 
+     
+     
+     
+
 
      $(".arrow1").on("click",function(){
       //$('.arrow2').attr('disabled', false);
@@ -371,7 +450,10 @@ $(document).ready(function () {
         //   });
         // }
       })
-      
+       
+      $
+
+
    
    
    
