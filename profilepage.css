@@ -239,8 +239,8 @@ body{
    display: flex;
    justify-content: center;
    align-items: center;
-   font-size: 30px;
-   padding-right: 10px;
+   font-size: 28px;
+   /* padding-right: 10px; */
    margin-bottom: 40px;
    position: relative;
 }
@@ -268,7 +268,12 @@ body{
     font-size: 0.5em; 
 } */
 
-
+.xyz{
+   display: flex; 
+   /* align-items: center; */
+   justify-content: center;
+  
+}
 /* Inner CSS */
 
 .innerDetails{
@@ -488,6 +493,31 @@ h1{
   font-family: Poppins , sans-serif;
 }
 
+.ifb1{
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+}
+.pen{
+   position: relative;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    height: 25px;
+    text-align: center;
+    background-color: white;
+    border-radius: 50%;
+    font-size: 12px;
+    color: rgb(17, 16, 16);
+    /* background-color: red; */
+    border: 2px solid white;
+    transition-duration: 0.4s;
+    /*bottom:210px;
+    left: 670px;*/
+ }
+ .pen:hover{
+    background-color: white;
+    color: green;
+ }
 
 /* mobile */
 @media only screen and (max-width: 600px) {
