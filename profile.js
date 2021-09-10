@@ -360,8 +360,8 @@ $(document).ready(function () {
         </div>
         <h1 class="innerp1">Enter Your Details:</h1>
         <form action="" class="form5">
-        <input type='text' class="i1" placeholder='Enter your Course Name'/>
-        <input type='text' class="i2" placeholder='Enter Your Certificate Credentials'/>
+        <input type='text' class="i1" placeholder='Enter Your Achievement/Responsibilities handled'/>
+        <input type='text' class="i2" placeholder='Enter Your Certificate Credentials/Validation Certificate'/>
         <div>
         <button type='submit' class="submit1">Submit!</button>
         </div>
@@ -424,37 +424,88 @@ $(document).ready(function () {
      
 
 
-     $(".arrow1").on("click",function(){
+$(".arrow1").on("click",function(){
       //$('.arrow2').attr('disabled', false);
         //$(".innerinfo2").show();
             $(".info2").after(`<div class="innerinfo2">
-              <p>why</p>
+             
+             <div class="ifb1"> 
+             <p>why</p>
+             <button class="pen"><i class="fas fa-pen"></i></button>
+             </div>
+
             </div>`);
-            //  $('button').prop('disabled', false);
+             $('button').prop('disabled', true);
+             $(".pen").prop('disabled',false);
+             $(`<button class="innerarrow1 f6"><i class="fas fa-chevron-down"></i></button>`).insertAfter(this)
+             $(this).hide();
           //  $(".arrow1").replaceWith(`<button class="innerarrow1"><i class="fas fa-chevron-down"></i></button>`);
-          $(`<button class="innerarrow1 f2"><i class="fas fa-chevron-down"></i></button>`).insertBefore(".text1");
-          $(".f1").remove();
+          // $(`<button class="innerarrow1 f2"><i class="fas fa-chevron-down"></i></button>`).insertBefore(".text1");
+          // $(".f1").remove();
          $(".innerarrow1").on("click",function(){
+          $(`<button class="arrow1"><i class="fas fa-chevron-right"></i></button>`).insertAfter(".innerarrow1")
+          // $(".arrow1").load(location.href+" .arrow1*","");
             //  $(".innerarrow1").replaceWith(`<button class="arrow1"><i class="fas fa-chevron-right"></i></button>`);
             // $(".innnerarrow1")
             $(".innerinfo2").hide();
-            $(".f2").remove();
-            $(`<button class="arrow1 f1"><i class="fas fa-chevron-right"></i></button>`).insertAfter(".main");
+            $(".innerarrow1").hide();
+            // $(".arrow1").show();
+            // $(".f2").remove();
+            // $(`<button class="arrow1 f1"><i class="fas fa-chevron-right"></i></button>`).insertAfter(".main");
             // $('button').prop("disabled", false);
+            $('button').prop('disabled', false); 
+            location.reload();
           });
          $('.arrow1').on('click', true);   
         $('.arrow1').attr('disabled', false);
+        
         // for(let i = 0; i < 20; i++) {
         //   $('.arrow1' + i).click( function(){
         //     alert('you clicked ' + i);
         //   });
         // }
-      })
-       
-      $
-
-
-   
-   
+      });
+      
+      $(".arrow2").on("click",function(){
+        //$('.arrow2').attr('disabled', false);
+          //$(".innerinfo2").show();
+              $(".info3").after(`<div class="innerinfo2">
+               
+               <div class="ifb1"> 
+               <p>why</p>
+               <button class="pen"><i class="fas fa-pen"></i></button>
+               </div>
+  
+              </div>`);
+               $('button').prop('disabled', true);
+               $(".pen").prop('disabled',false);
+               $(`<button class="innerarrow1 f6"><i class="fas fa-chevron-down"></i></button>`).insertAfter(this)
+               $(this).hide();
+            //  $(".arrow1").replaceWith(`<button class="innerarrow1"><i class="fas fa-chevron-down"></i></button>`);
+            // $(`<button class="innerarrow1 f2"><i class="fas fa-chevron-down"></i></button>`).insertBefore(".text1");
+            // $(".f1").remove();
+           $(".innerarrow1").on("click",function(){
+            $(`<button class="arrow1"><i class="fas fa-chevron-right"></i></button>`).insertAfter(".innerarrow1")
+            // $(".arrow1").load(location.href+" .arrow1*","");
+              //  $(".innerarrow1").replaceWith(`<button class="arrow1"><i class="fas fa-chevron-right"></i></button>`);
+              // $(".innnerarrow1")
+              $(".innerinfo2").hide();
+              $(".innerarrow1").hide();
+              // $(".arrow1").show();
+              // $(".f2").remove();
+              // $(`<button class="arrow1 f1"><i class="fas fa-chevron-right"></i></button>`).insertAfter(".main");
+              // $('button').prop("disabled", false);
+              $('button').prop('disabled', false); 
+              location.reload();
+            });
+           $('.arrow1').on('click', true);   
+          $('.arrow1').attr('disabled', false);
+          
+          // for(let i = 0; i < 20; i++) {
+          //   $('.arrow1' + i).click( function(){
+          //     alert('you clicked ' + i);
+          //   });
+          // }
+        });   
    
  });
