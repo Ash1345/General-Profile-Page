@@ -11,21 +11,21 @@ $(document).ready(function () {
           <p class="note">Note: Click on the the field of education and fill the mandatory requirements</p>
           <div class="tenth">
             <div class="innerflex">  
-              <button class="innerarrow"><i class="fas fa-chevron-right"></i></button>
+              
               <h3 class="t10">10TH</h3>
             </div>    
               <button class="innerb1"><i class="fas fa-plus"></i></button>
           </div>
           <div class="twelfth">
             <div class="innerflex">  
-              <button class="innerarrow"><i class="fas fa-chevron-right"></i></button>
+              
               <h3 class="t12">12TH</h3>
             </div>  
               <button class="innerb2"><i class="fas fa-plus"></i></button>
           </div>
           <div class="Graduation">
             <div class="innerflex">  
-              <button class="innerarrow"><i class="fas fa-chevron-right"></i></button>
+              
               <h3 class="t13">Graduation</h3>
           
              </div>
@@ -75,7 +75,7 @@ $(document).ready(function () {
         <div class="el1">
         <div class="collapse2">
         <h1>10th</h1>
-        <button class="sub1"><i class="fas fa-minus"></i></button>
+         <button class="sub1"><i class="fas fa-minus"></i></button>
         </div>
         <h1 class="innerp1">Enter Your Details:</h1>
 
@@ -150,6 +150,7 @@ $(document).ready(function () {
              </div>
         <h1 class="innerp2">Enter Your Details:</h1>
         <form action="" class="form2">
+        
         <input type='text' class="i1" placeholder='Enter your College Name'/>
         <input type='text' class="i2" placeholder='Enter Your Total Percentage'/>
         <div>
