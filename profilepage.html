@@ -15,14 +15,16 @@
    <body>
       <!-- <div class="profile"> -->
          <div class="picture">
-            <img class="image" src="photo profile 1.jpg" alt="User">
+            <img class="image" src="<%= user.photo%>" alt="User">
          </div>
          <div class="container">
             <!-- <div class="picture">
                <img class="image" src="photo profile 1.jpg" alt="User"> -->
             <!-- </div> -->
             <div class="name">
-               <h1 class="fnt">Jona D Hibbs</h1>
+               <h1 class="fnt">
+                  <%= user.firstName + user.lastName%>
+               </h1>
             </div>
             <div class="icons">
                <i class="fas fa-star"></i>
@@ -32,11 +34,7 @@
                <i class="fas fa-star"></i>
             </div>
             <div class="bio">
-               <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
-                  industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and
-                  scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap
-                  into electronic typesetting, remaining essentially unchanged.
-               </p>
+               <p><%= user.bio%></p>
                <!-- <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical
                   Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at
                   Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a
@@ -57,7 +55,7 @@
                         <p>Full Name</p>
                        </div>
                        <div class="is2">
-                        <p>Jona D Hibbs</p>
+                        <p><%= user.firstName + user.lastName%></p>
                        </div>
                   </div>
                   <div class="s2">
@@ -65,15 +63,15 @@
                       <p>Gender</p>
                      </div>
                      <div class="is4">
-                      <p>Male</p>
+                      <p><%= user.gender %></p>
                      </div>
                 </div>
                 <div class="s3">
                   <div class="is4">
-                   <p>City</p>
+                   <p>Email</p>
                   </div>
                   <div class="is5">
-                   <p>Maumee</p>
+                   <p><%= user.email %></p>
                   </div>
                 </div>
                 <div class="s4">
@@ -81,7 +79,7 @@
                    <p>Age</p>
                   </div>
                   <div class="is7">
-                   <p>25</p>
+                   <p><%= user.age%></p>
                   </div>
                 </div>
                   <!-- <div class="qualification">
@@ -105,10 +103,20 @@
                   <!-- <div class="qualification"> -->
                      <div class="course main info2">
                      <div class="innerflex">
-                        <button class="arrow1 f1"><i class="fas fa-chevron-right"></i></button>  
-                        <p class="text2 select5">Passed in 10th grade</p>
+                        <!-- <button class="arrow1 f1"><i class="fas fa-chevron-right"></i></button>   -->
+                        <!-- <p class="text2 select5">Passed in 10th grade</p> -->
+                        <% if(education){ %>
+                           <% education.forEach(function(education){ %>
+                              <p class="text2 select5"><%=education[i].title%></p>
+                              <% }) %>
+                       <% } %>
                      </div>
-                        <p class="value2 select6">cgpa</p>
+                     <% if(education){ %>
+                        <% education.forEach(function(education){ %>
+                           <p class="value2 select6"><%=education[i].obtainedMarks "/" education[i].totalMarks %></p>
+                           <% }) %>
+                    <% } %>
+                        <!-- <p class="value2 select6">cgpa</p> -->
                      </div>
                      <!-- <p class="text2"></p>
                      <p class="value2"></p> 
@@ -123,18 +131,29 @@
                   <div class="qualification">
                      <div class="course info3">
                         <div class="innerflex">
-                        <button class="arrow2"><i class="fas fa-chevron-right"></i></button>
-                        <p class="text3">Course in python</p>
+                        <!-- <button class="arrow2"><i class="fas fa-chevron-right"></i></button> -->
+                        <% if(skills){ %>
+                           <% skills.forEach(function(skills){ %>
+                              <p class="text3"><%=skills[i].title %></p>
+                              <% }) %>
+                       <% } %>
+                        
+                        <!-- <p class="text3">Course in python</p> -->
                      </div>
-                        <a href="" target="_blank" class="value3"><i class="fas fa-link"></i></a>
+                     <% if(skills){ %>
+                        <% skills.forEach(function(skills){ %>
+                           <a href="<%=skills[i].link %>" target="_blank" class="value3"><i class="fas fa-link"></i></a>
+                           <% }) %>
+                    <% } %>
+                        <!-- <a href="" target="_blank" class="value3"><i class="fas fa-link"></i></a> -->
                  </div>
-                     <div class="course">
+                     <!-- <div class="course">
                      <div class="innerflex">
                         <button class="arrow2"><i class="fas fa-chevron-right"></i></button>
                         <p class="text3">Course in Java</p>
                      </div>
                         <a href="" target="_blank" class="value3"><i class="fas fa-link"></i></a>
-                     </div>
+                     </div> -->
                   </div>
                </div>
                <div class="rR">
@@ -142,13 +161,23 @@
                      <h2><i class="fas fa-trophy"></i> Achievement and Responsibilites</h2>
                      <button class="add action4"><i class="fas fa-plus"></i></button>
                   </div>
-                  <!-- <div class="course">
-                     <div class="innerflex">
+                  <div class="block">
+                     <!-- <div class="innerflex"> -->
                         <button class="arrow"><i class="fas fa-chevron-right"></i></button>
-                        <p class="text3">Head Boy in School</p>
+                        <% if(achievements){ %>
+                           <% achievements.forEach(function(achievements){ %>
+                              <p class="text3"><%=achievements[i].title %></p>
+                              <% }) %>
+                       <% } %>
+                        <!-- <p class="text3">Head Boy in School</p> -->
+                     <!-- </div> -->
+                     <% if(achievements){ %>
+                        <% achievements.forEach(function(achievements){ %>
+                           <p class="value3"><%=achievements[i].description%></p>
+                           <% }) %>
+                    <% } %> 
+                     <!-- <a href="" target="_blank" class="value3"><i class="fas fa-link"></i></a> -->
                      </div>
-                        <a href="" target="_blank" class="value3"><i class="fas fa-link"></i></a>
-                     </div> -->
                   <div class="dropdown">
                   </div>
                </div>
